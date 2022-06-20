@@ -16,8 +16,8 @@ dhtDevice = adafruit_dht.DHT11(board.D4)
 from datetime import datetime
 
 
-sumtmp=0
-sumhmd=0
+sumtmp=0.0
+sumhmd=0.0
 cnt=0
 for i in range(72):
     try:
@@ -28,22 +28,16 @@ for i in range(72):
         #print("Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(temperature_f, temperature_c, humidity))
         sumtmp+=temperature_c
         sumhmd+=humidity
-        print(temperature_c)
-        print(humidity)
         cnt+=1    
     except RuntimeError as error:
-        # Errors happen fairly often, DHT's are hard to read, just keep going
-        #print(error.args[0])
-        #time.sleep(2.0)
         continue
     except Exception as error:
         dhtDevice.exit()
         raise error
-    #time.sleep(1200.0)
-    #time.sleep(2.0)
+    time.sleep(1200.0)
 f = open("temp.txt", "a")
-avgt=sumtmp/1.0/cnt
-avgh=sumhmd/1.0/cnt
+avgt=sumtmp/cnt
+avgh=sumhmd/cnt
 line = datetime.now().strftime("\n%Y-%m-%d %H:%M:%S")+"\t"+str(avgt)+"\t"+str(avgh)
 f.write(line)
 f.close()

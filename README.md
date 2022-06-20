@@ -7,7 +7,12 @@ Dashboard cu urmatoarele categorii:
  - Statistici views obtinute de pe `https://socialblade.com/youtube/channel/UC7_YxT-KID8kRbqZo7MyscQ/monthly`
 
 # Credits
+## Adresare pini
+Folosind biblioteca Adafruit pt Python
+## Grafice SVG
+Creat folosind d3.js
 
+## Stil CSS
 Copyright (c) 2022 by Håvard Brynjulfsen (https://codepen.io/havardob/pen/ExvwGBr)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

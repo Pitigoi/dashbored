@@ -18,4 +18,7 @@ sudo mv ./graph.js /var/www/html/graph.js
 sudo mv /var/www/html/index.html /var/www/html/default.html
 sudo mv ./index.html /var/www/html/index.html
 sudo mv ./pyes.sh /var/local/pyes.sh
+sudo mv ./pyes.sh /var/local/temppyes.sh
 (crontab -l && echo "0 0 * * * /var/local/pyes.sh") | crontab -
+(crontab -l && echo "0 0 * * * /var/local/temppyes.sh") | crontab - 
+#(crontab -l && echo "0 0 0 * * /var/local/temppyes.sh") | crontab - #choose frequency of scans depending on the desired resolution

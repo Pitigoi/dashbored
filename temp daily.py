@@ -15,17 +15,14 @@ dhtDevice = adafruit_dht.DHT11(board.D4)
 
 from datetime import datetime
 
-
+date=datetime.now()
 sumtmp=0.0
 sumhmd=0.0
 cnt=0
 for i in range(72):
     try:
-        # Print the values to the serial port
         temperature_c = dhtDevice.temperature
-        #temperature_f = temperature_c * (9 / 5) + 32
         humidity = dhtDevice.humidity
-        #print("Temp: {:.1f} F / {:.1f} C    Humidity: {}% ".format(temperature_f, temperature_c, humidity))
         sumtmp+=temperature_c
         sumhmd+=humidity
         cnt+=1    
@@ -38,8 +35,6 @@ for i in range(72):
 f = open("temp.txt", "a")
 avgt=sumtmp/cnt
 avgh=sumhmd/cnt
-line = datetime.now().strftime("\n%Y-%m-%d %H:%M:%S")+"\t"+str(avgt)+"\t"+str(avgh)
+line = date.strftime("\n%Y-%m-%d %H:%M:%S")+"\t"+str(avgt)+"\t"+str(avgh)
 f.write(line)
 f.close()
-    
-        

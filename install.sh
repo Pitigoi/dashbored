@@ -6,11 +6,7 @@ sudo apt-get install libgpiod2
 sudo apt install cron
 sudo systemctl enable cron
 echo "
-ServerName localhost
-
-<FilesMatch \\.php$>
-	SetHandler application/x-httpd-php
-</FilesMatch>" | sudo tee -a /etc/apache2/apache2.conf
+ServerName localhost" | sudo tee -a /etc/apache2/apache2.conf
 sudo mv ./covid.py /var/www/html/covid.py
 sudo mv ./temp.py /var/www/html/temp.py
 sudo mv ./socialblade.py /var/www/html/socialblade.py

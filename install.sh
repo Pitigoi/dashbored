@@ -1,7 +1,5 @@
 #/bin/bash
 sudo apt-get install apache2
-sudo apt-get install libapache2-mod-php8.0
-a2enmod php8.0
 pip3 install adafruit-circuitpython-dht
 pip3 install html_to_json
 sudo apt-get install libgpiod2
@@ -21,7 +19,7 @@ sudo mv ./temp.txt /var/www/html/temp.txt
 sudo mv ./socialblade.txt /var/www/html/socialblade.txt
 sudo mv ./style.css /var/www/html/style.css
 sudo mv ./graph.js /var/www/html/graph.js
-sudo mv ./index.php /var/www/html/index.php
-sudo mv ./pyes.sh /var/local/pyes.sh
 sudo mv /var/www/html/index.html /var/www/html/default.html
+sudo mv ./index.html /var/www/html/index.html
+sudo mv ./pyes.sh /var/local/pyes.sh
 (crontab -l && echo "0 0 * * * /var/local/pyes.sh") | crontab -
